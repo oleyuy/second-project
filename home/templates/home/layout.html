@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Anime-сайт{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'home/css/styles.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- 🌙 Верхній бар -->
+<header class="top-bar">
+    <div class="logo">Animus</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Пошук...">
+        <button>Знайти</button>
+    </div>
+</header>
+
+<!-- 📄 Основний контент -->
+<main class="main-container">
+
+    <!-- 📚 Меню зліва -->
+    <aside class="sidebar">
+        <h3>Навігація по сайту</h3>
+        <ul>
+            <li><a href="#">Аніме</a></li>
+            <li><a href="#">Манга</a></li>
+            <li><a href="#">Топ-100</a></li>
+            <li><a href="#">Новинки</a></li>
+            <li><a href="#">Рекомендації</a></li>
+            
+        </ul>
+        <div class="theme-toggle">
+            <label>Тема</label>
+            <input type="checkbox">
+        </div>
+    </aside>
+
+    <!-- 🖼️ Контент-частина -->
+    <section class="content">
+        <h2>Кращі аніме</h2>
+        <div class="anime-grid">
+            {% block content %}
+            <!-- Тут вставляється контент сторінки -->
+            {% endblock %}
+        </div>
+    </section>
+
+</main>
+
+<!-- ⚓ Підвал -->
+<footer>
+    <p>© 2025, Аніме-світ від Олега</p>
+</footer>
+
+</body>
+</html>

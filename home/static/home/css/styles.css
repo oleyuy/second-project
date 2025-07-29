@@ -1,0 +1,179 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #18141c;
+    color: #f4f0f5;
+}
+
+/* Верхній бар */
+.top-bar {
+    background: linear-gradient(to right, #29202f, #1f1b24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px #000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f278b8;
+    letter-spacing: 2px;
+}
+
+.top-nav a {
+    color: #dbaadd;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.top-nav a:hover {
+    color: #e39ec1;
+}
+
+/* Пошук */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background-color: #2e2a35;
+    color: #f4f0f5;
+}
+.search-bar button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #e39ec1;
+    color: #18141c;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.search-bar button:hover {
+    background-color: #f0b8d1;
+}
+
+/* Основний контейнер */
+.main-container {
+    display: flex;
+    padding: 20px;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 250px;
+    height: 90vh;
+    background-color: #23202a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-right: 20px;
+    overflow-y: auto;
+    box-shadow: 0 0 12px rgba(227, 158, 193, 0.2);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #f278b8;
+    font-size: 22px;
+}
+
+/* Кнопки */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul a {
+    display: block;
+    background-color: #2e2a35;
+    color: #f4f0f5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.2s, color 0.2s;
+}
+
+.sidebar ul a:hover {
+    background-color: #f278b8;
+    color: #18141c;
+    transform: scale(1.03);
+}
+
+/* Тема */
+.theme-toggle {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #a988a8;
+}
+
+/* Контент */
+.content {
+    flex-grow: 1;
+}
+
+.content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #f278b8;
+    margin-bottom: 20px;
+}
+
+/* Сітка аніме */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.anime-grid .anime-card {
+    background-color: #2a2530;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.anime-grid .anime-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 200, 230, 0.2);
+}
+
+.anime-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.anime-card h4 {
+    margin: 10px 0 0;
+    color: #f4f0f5;
+}
+
+/* Підвал */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #18141c;
+    color: #a988a8;
+    margin-top: 40px;
+    font-size: 14px;
+}

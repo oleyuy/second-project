@@ -24,6 +24,7 @@ body {
     font-weight: bold;
     color: #f278b8;
     letter-spacing: 2px;
+    text-decoration: none;
 }
 
 .top-nav a {
@@ -36,11 +37,48 @@ body {
 .top-nav a:hover {
     color: #e39ec1;
 }
+/* Аватар користувача */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #2e2636; /* або підбери під свій фон */
+  color: #ffc0cb; /* рожевий як кнопка "Знайти" */
+  font-weight: 500;
+  font-family: inherit;
+  text-decoration: none;
+  transition: transform 0.5s ease;
+}
+.user-profile:hover {
+  transform: scale(1.05); /* збільшення при наведенні */
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  white-space: nowrap;
+  width: 100px;
+  font-size: 14px;
+  white-space: nowrap;          /* не переносити текст */
+  overflow: hidden;             /* приховати все, що за межами */
+  text-overflow: ellipsis;
+}
+
 
 /* Пошук */
 .search-bar {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
+    margin-left: auto;
+    margin-right: 40px;
 }
 .search-bar input {
     padding: 6px 10px;
@@ -138,35 +176,6 @@ body {
 }
 
 /* Сітка аніме */
-.anime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-.anime-grid .anime-card {
-    background-color: #2a2530;
-    border-radius: 15px;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.anime-grid .anime-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(255, 200, 230, 0.2);
-}
-
-.anime-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.anime-card h4 {
-    margin: 10px 0 0;
-    color: #f4f0f5;
-}
 
 /* Підвал */
 footer {

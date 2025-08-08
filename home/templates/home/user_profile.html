@@ -1,0 +1,28 @@
+{% extends 'home/layout.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'home/css/user.css' %}">
+<section class="user-page">
+    <div class="user-info">
+        <img src="{% static 'home/img/avatar.jpg' %}" alt="Avatar" class="user-avatar">
+        <div class="user-details">
+            <h2>{{ user.username }}</h2>
+            <p>Тип акаунту:
+                {% if user.is_staff %} Адміністратор
+                {% elif user.is_premium %} Преміум
+                {% else %} Звичайний
+                {% endif %}
+            </p>
+            <p>Дата реєстрації: {{ user.date_joined|date:"d.m.Y" }}</p>
+        </div>
+    </div>
+
+    <div class="user-actions">
+        <a href="#" class="user-btn">Редагувати профіль</a>
+        <a href="" class="user-btn logout">Вийти</a>
+    </div>
+</section>
+{% endblock %}
+

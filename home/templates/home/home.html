@@ -1,4 +1,43 @@
 {%extends 'home/layout.html'%}
+{% load static %}
+{%block content%}
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Список Аніме</title>
+    <link rel="stylesheet" href="{% static 'home/css/listOfAnime.css' %}">
+
+</head>
 <body>
-    <h1>welcome</h1>
+    <div class="container">
+        <div class="anime-row">
+            {% for anime in animes %}
+                <div class="anime-card">
+                    {% if anime.image %}
+                        <img src="{{ anime.image.url }}" alt="{{ anime.title }}" />
+                    {% else %}
+                        <div class="no-image">Немає картинки</div>
+                    {% endif %}
+                    
+                
+                    <div class="anime-details">
+                        <h3>{{ anime.title }}</h3>
+                        <h4>Рік: {{ anime.year }}</h4>
+                        <h5>Жанри:</h5>
+                        <ul>{%for genre in anime.genres.all%}
+                            {% if genre %}
+                                <li>{{ genre.name }}</li>
+                            {% else %}
+                                <li>Немає жанрів</li>
+                            {% endif %}
+                        {%endfor%}</ul>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Аніме не знайдено.</p>
+            {% endfor %}
+        </div>
+    </div>
 </body>
+</html>
+{%endblock%} 

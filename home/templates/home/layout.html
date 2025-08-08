@@ -12,11 +12,22 @@
 
 <!-- 🌙 Верхній бар -->
 <header class="top-bar">
-    <div class="logo">Animus</div>
+    <a href="/" class="logo">Animus</a>
     <div class="search-bar">
         <input type="text" placeholder="Пошук...">
         <button>Знайти</button>
     </div>
+    <!-- 👤 Профіль користувача -->
+        {%if user.is_authenticated %}
+            <a href="user_profile/" class="user-profile">
+            <img src="avatar.jpg" alt="Avatar" class="avatar">
+            <span class="username">User001</span></a>
+        {%else%}
+            <a href="login/" class="login-link">Увійти</a>
+        {%endif%}
+        
+    
+
 </header>
 
 <!-- 📄 Основний контент -->
@@ -41,7 +52,6 @@
 
     <!-- 🖼️ Контент-частина -->
     <section class="content">
-        <h2>Кращі аніме</h2>
         <div class="anime-grid">
             {% block content %}
             <!-- Тут вставляється контент сторінки -->

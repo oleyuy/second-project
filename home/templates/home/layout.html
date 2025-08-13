@@ -18,13 +18,15 @@
         <button>Знайти</button>
     </div>
     <!-- 👤 Профіль користувача -->
-        {%if user.is_authenticated %}
-            <a href="user_profile/" class="user-profile">
-            <img src="avatar.jpg" alt="Avatar" class="avatar">
-            <span class="username">User001</span></a>
-        {%else%}
-            <a href="login/" class="login-link">Увійти</a>
-        {%endif%}
+    {% if user.is_anonymous %}
+        <a href="{% url 'login' %}" ><button class="login">Увійти</button></a>
+    {% else %}
+        <a href="/user_profile/" class="user-profile">
+        <img src="avatar.jpg" alt="Avatar" class="avatar">
+        <span class="username">{{ user.username }}</span>
+    </a>
+{% endif %}
+
         
     
 

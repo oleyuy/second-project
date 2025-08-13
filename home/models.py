@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.html import format_html
-
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.models import Group, Permission
 # Create your models here.
 class Anime(models.Model):
     title = models.CharField(max_length=75)
@@ -29,3 +30,20 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+    
+# this model defines the new user profile
+
+
+    
+class MyUser(AbstractBaseUser, PermissionsMixin):
+    name = models.CharField(max_length=15)
+    email = models.EmailField(max_length=255, unique=True)
+    birth_year = models.IntegerField()
+    date_joined = models.DateTimeField(auto_now_add=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', 'birth_year']
+
+
+    def __str__(self):
+        return self.email

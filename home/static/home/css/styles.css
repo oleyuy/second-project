@@ -37,6 +37,21 @@ body {
 .top-nav a:hover {
     color: #e39ec1;
 }
+/* Кнопка увійти */
+
+.login{
+    background-color: #e39ec1;
+    color: #18141c;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s, color 0.2s;
+}
+.login:hover {
+    background-color: #f278b8;
+    transform: scale(1.05);
+}
 /* Аватар користувача */
 .user-profile {
   display: flex;
@@ -50,6 +65,7 @@ body {
   font-family: inherit;
   text-decoration: none;
   transition: transform 0.5s ease;
+
 }
 .user-profile:hover {
   transform: scale(1.05); /* збільшення при наведенні */

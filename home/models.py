@@ -33,8 +33,6 @@ class Genre(models.Model):
     
 # this model defines the new user profile
 
-
-    
 class MyUser(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=15)
     email = models.EmailField(max_length=255, unique=True)
@@ -45,5 +43,6 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['name', 'birth_year']
 
 
+    # дописать менеджер
     def __str__(self):
         return self.email

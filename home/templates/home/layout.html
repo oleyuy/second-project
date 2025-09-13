@@ -19,7 +19,7 @@
     </div>
     <!-- 👤 Профіль користувача -->
     {% if user.is_anonymous %}
-        <a href="{% url 'login' %}" ><button class="login">Увійти</button></a>
+        <a href="{%  %}" ><button class="login">Увійти</button></a>
     {% else %}
         <a href="/user_profile/" class="user-profile">
         <img src="avatar.jpg" alt="Avatar" class="avatar">

@@ -1,5 +1,5 @@
 .anime-grid .anime-card {
-    width: 400px;
+    width: 375px;
     background-color: #2a2530;
     border-radius: 15px;
     text-align: center;
@@ -23,7 +23,9 @@
 }
 
 .anime-card img {
+    height: 97%;
     width: 100%;
+    
     border-radius: 10px;
     margin-bottom: 15px;
 }

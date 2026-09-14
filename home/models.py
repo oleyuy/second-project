@@ -70,4 +70,4 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 
     # дописать менеджер
     def __str__(self):
-        return self.email
+        return self.name

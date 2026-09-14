@@ -4,6 +4,10 @@ from .models import Anime
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from .models import MyUser
+from .forms import Loginform
+
+
+
 # Create your views here.
 def home(request):
     animes = Anime.objects.all()
@@ -45,7 +49,7 @@ def register_view(request):
         return redirect('home')
         
     return render(request, "account/register.html")
-
+"""
 def login_view(request):
     if request.method == "POST":
         email = request.POST.get('email')
@@ -62,6 +66,32 @@ def login_view(request):
             return HttpResponse("Invalid credentials")
 
     return render(request, "account/login.html")
+"""
+def login_view(request):
+    if request.method == "POST":
+        form = Loginform(request.POST)
+
+        if form.is_valid():
+            print("Форма валидна")
+
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+
+            user = authenticate(request, email=email, password=password)
+
+            print(user)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+
+        else:
+            print("Форма НЕ валидна")
+
+    else:
+        form = Loginform()
+
+    return render(request, "account/login.html", {"form": form})
+
 
 def user_profile(request):
     # This is a placeholder for user profile logic

@@ -1,7 +1,18 @@
 {%extends 'home/layout.html'%}
 {% load static %}
-{% block title %}Реєстрація на сайт{% endblock %}
+{% block title %}Реєстрація на сайті{% endblock %}
 {% load static %}
 {%block content%}
+<header>Реєстрація</header>
 
+<form method="post" novalidate>
+    {% csrf_token %}
+""" написать логику"""
+
+    <div class="form-buttons">
+        <a href="" class="register-btn">
+            Реєстрація
+        </a>
+    </div>
+</form>
 {%endblock%} 

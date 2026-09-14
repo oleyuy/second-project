@@ -1,0 +1,152 @@
+/* ===== Страница логина ===== */
+
+header {
+    text-align: center;
+    color: #e39ec1;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+/* Карточка с формой */
+form {
+    width: 420px;
+    min-height: 390px;
+
+    margin: 80px auto 0;
+    padding: 40px 45px;
+
+    box-sizing: border-box;
+
+    background-color: #1e1a22;
+    border: 1px solid #944a6e;
+    border-radius: 10px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Поля */
+form input {
+    width: 100%;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    margin: 8px 0 5px;
+    padding: 0 14px;
+
+    background-color: #302b35;
+    color: #f5edf2;
+
+    border: 1px solid #3d3542;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Когда нажали на поле */
+form input:focus {
+    border-color: #e39ec1;
+
+    box-shadow: 0 0 8px rgba(227, 158, 193, 0.25);
+}
+
+
+/* Placeholder */
+form input::placeholder {
+    color: #aaa2ad;
+}
+
+
+/* Ошибки Django */
+.form-error {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 3px 0 8px;
+
+    color: #e39ec1;
+
+    font-size: 13px;
+}
+
+
+/* Кнопка */
+/* Кнопки */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: auto;
+}
+
+.form-buttons button,
+.register-btn {
+    min-width: 120px;
+    height: 42px;
+
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e39ec1;
+    color: #18141c;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+/* Наведение */
+.form-buttons button:hover,
+.register-btn:hover {
+    background-color: #f278b8;
+}
+
+
+/* Нажатие */
+.form-buttons button:active,
+.register-btn:active {
+    transform: scale(0.97);
+}
+
+form label {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 3px;
+
+    color: #e8dce4;
+    font-size: 14px;
+    font-weight: bold;
+}

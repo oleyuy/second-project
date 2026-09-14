@@ -1,7 +1,37 @@
-{%extends 'home/layout.html'%}
+{% extends 'home/layout.html' %}
 {% load static %}
-{% block title %}Вхід на сайт{% endblock %}
-{% load static %}
-{%block content%}
 
-{%endblock%} 
+{% block title %}Вхід на сайт{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'home/css/login.css' %}">
+<script src="{% static 'home/js/login.js' %}" defer></script>
+
+<header>Логін</header>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+
+    {{ form.email }}
+
+    {% for error in form.email.errors %}
+        <p class="form-error">{{ error }}</p>
+    {% endfor %}
+
+    {{ form.password }}
+
+    {% for error in form.password.errors %}
+        <p class="form-error">{{ error }}</p>
+    {% endfor %}
+
+    <div class="form-buttons">
+        <button type="submit">Увійти</button>
+
+        <a href="{% url 'register' %}" class="register-btn">
+            Реєстрація
+        </a>
+    </div>
+</form>
+
+{% endblock %}

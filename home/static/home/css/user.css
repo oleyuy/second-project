@@ -39,33 +39,45 @@
     color: #dbaadd;
 }
 
-/* Контейнер для кнопок — вирівнювання праворуч і по вертикалі по центру */
+/* Контейнер для кнопок */
 .user-actions {
     display: flex;
-    justify-content: flex-end;  /* Кнопки справа */
-    align-items: center;        /* По вертикалі по центру */
+    justify-content: flex-end;
+    align-items: center;
     gap: 20px;
 }
 
+/* Общий стиль для ссылок и кнопок */
 .user-btn {
+    display: inline-block;
     background-color: #e39ec1;
     color: #18141c;
     padding: 10px 18px;
+    border: none;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-family: inherit;
+    font-size: inherit;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .user-btn:hover {
     background-color: #f0b8d1;
 }
 
+/* Кнопка выхода */
 .logout {
     background-color: #944a6e;
+    color: #18141c;
 }
 
 .logout:hover {
     background-color: #b5628a;
+}
+
+/* Убираем лишние отступы у формы выхода */
+.user-actions form {
+    margin: 0;
 }

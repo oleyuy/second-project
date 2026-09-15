@@ -4,7 +4,8 @@ from .models import Anime
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from .models import MyUser
-from .forms import Loginform
+from .forms import Loginform,RegisterForm
+from django.core.exceptions import ValidationError
 
 
 
@@ -12,8 +13,26 @@ from .forms import Loginform
 def home(request):
     animes = Anime.objects.all()
     return render(request, "home/home.html", {'animes': animes})
-
 def register_view(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            birth_year = form.cleaned_data['birth_year']
+            password = form.cleaned_data['password']
+
+            user = MyUser.objects.create_user(email,name,birth_year,password)
+            login(request,user)
+            return redirect('home')
+        
+    else:
+        form = RegisterForm()
+
+    return render(request, "account/register.html", {"form": form})
+
+
+"""def register_view(request):
     if request.method == "POST":
         name = request.POST.get('name')
         if len(name) < 3 or len(name) > 15:
@@ -50,7 +69,7 @@ def register_view(request):
         
     return render(request, "account/register.html")
 """
-def login_view(request):
+"""def login_view(request):
     if request.method == "POST":
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -65,8 +84,8 @@ def login_view(request):
         else:
             return HttpResponse("Invalid credentials")
 
-    return render(request, "account/login.html")
-"""
+    return render(request, "account/login.html")"""
+
 def login_view(request):
     if request.method == "POST":
         form = Loginform(request.POST)
